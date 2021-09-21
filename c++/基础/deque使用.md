@@ -11,11 +11,16 @@
         > deque(const deque&):复制构造函数
 
     * 2. 增加函数
-        > void push_fron(const T& x): 双端队列头部增加一个元素X
+        > void push_front(const T& x): 双端队列头部增加一个元素X
         > void push_back(const T& x): 双端队列尾部增加一个元素X
         > iterator insert(iterator it,const T& x): 双端队列中某一个元素前增加一个元素X
         > void insert(iterator it, int n, const T& x):双端队列中某一元素前增加 n个 相同的元素 X
         > void insert(iterator it,const_iterator first, const_iterator last): 双端队列中某一元素前插入另一个相同类型向量的[first,last]间的数据
+        > emplace() 在队列指定的元素位置前插入新的元素
+        > emplace_back() 在队列尾部增加新的元素
+        > emplace_front() 在队列头部增加新的元素 emplace_back/front 和 push_back/front功能是一样的都是用来
+            增加新元素到队列，前者在效率上要好一些，因为 emplace_back/front 只调用构造函数，没有移动构造函数，也
+            没有拷贝构造函数
 
     * 3. 删除数据
         > iterator erase(iterator it):删除双端队列中的某一个元素
